@@ -1,0 +1,31 @@
+
+#访问端口号
+server:
+  port: 8080
+#编码格式
+  tomcat.uri-encoding: utf-8
+  servlet:
+    session:
+      timeout: 30m
+
+#数据库相关配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&serverTimezone=GMT
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  #应用名称
+  application:
+    name: demo
+    http:
+      encoding:
+        charset: UTF-8
+        force: true
+    jackson:
+      default-property-inclusion: non_null
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.demo.entity.entity
